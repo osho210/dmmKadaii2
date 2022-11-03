@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-mod-3">
+      <h2>User info</h2>
+      <!--ここに判定のコードが入る (画像)-->
+
+      <!--user情報を格納する-->
+      <table class="table">
+        <tr>
+          <th>name</th>
+          <!--ログインユーザー名-->
+          <th></th>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <!--user introduction-->
+          <th></th>
+        </tr>
+      </table>
+      <!--user編集機能リンク-->
+      <div class="row">
+        <%= link_to 'test' ,class: 'btn btn-outline-secondary btn-block' %>
+      </div>
+
+      <!--create book要素-->
+      <h2 class="mt-3">New Book</h2>
+      <%= form_with model: @book ,url: '/books' , method: :post do |f| %>
+
+      <div class="form-group">
+        <!--判定部分は削除-->
+          <div class="field">
+            <label>Title</label>
+            <%= f.text_field :title, class: 'form-control book_title'%>
+          </div>
+          <div class="field">
+            <label>Opinion</label>
+            <%= f.text_area :body, class: 'form-control book_body'%>
+          </div>
+        </div>
+        <!--送信処理-->
+        <div class="action">
+          <%= f.submit 'Create Book' , class: 'btn btn-success'%>
+        </div>
+        <% end %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h2>Users</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th></th>
+            <th>image</th>
+            <th>name</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--ここにループ文を記載-->
+        </tbody>
+      </table>
+    </div>
+
+    </div>
+  </div>
+</div>
