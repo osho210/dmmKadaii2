@@ -54,12 +54,11 @@
           </tr>
         </thead>
         <tbody>
-          <% @books.each do |book| %>
+          <% @users.each do |user|  %>
           <tr>
-            <td><%= book.title %></td>
-            <td><%= link_to book.introduction , book_path(book.id) %></td>
-            <td><%= link_to 'Edit'  ,edit_book_path(book.id)%></td>
-            <td><%= link_to 'Destroy' , book_path(book.id) , method: :delete , "data-confirm" => "Are you sure?" %></td>
+            <td><%= user.name %></td>
+            <td><%= user.introduction %></td>
+            <td><%= link_to 'Show' , user_path(user.id) %></td>
           </tr>
           <% end %>
           <!--ここにループ文を記載-->

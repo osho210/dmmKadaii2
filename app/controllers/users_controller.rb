@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @users = User.all.order(id: :asc)
+    @books = Book.all.order(id: :asc)
+  end
+
+  def index
+    @user = User.find(current_user.id)
+    @users = User.all.order(id: :asc)
   end
 
   def edit
@@ -8,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
     # 正常に処理されるとフラッシュメッセージ
         @user = User.new(user_params)
 	      @user.save!
@@ -17,7 +23,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :introduction)
+    params.require(:user).permit(:name ,:profile_image,:introduction)
   end
 
 end
