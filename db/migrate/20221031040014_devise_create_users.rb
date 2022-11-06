@@ -17,6 +17,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       # 追加要素
       t.string :name
       t.string :introduction
+      
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false

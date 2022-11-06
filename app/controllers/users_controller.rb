@@ -14,12 +14,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
   def update
     # 正常に処理されるとフラッシュメッセージ
         @user = User.new(user_params)
 	      @user.save!
 	      redirect_to user_path
   end
+
+
+
 
   private
   def user_params

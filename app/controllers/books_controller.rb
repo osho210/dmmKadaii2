@@ -5,10 +5,13 @@ class BooksController < ApplicationController
   def index
     @books = Book.all.order(id: :asc)
     @book = Book.new
+
+    # editの情報
+    @user = User.find(current_user.id)
   end
 
   def show
-    @books = Book.all.order(id: :asc)
+    @user = User.find(current_user.id)
     @book = Book.find(params[:id])
   end
 

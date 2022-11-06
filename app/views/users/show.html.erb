@@ -3,7 +3,7 @@
     <div class="col-mod-3">
       <h2>User info</h2>
       <!--ここに判定のコードが入る (画像)-->
-      <%= image_tag @user.get_profile_image(100,100) %>
+      <%= image_tag @user.get_profile_image(1200,100) %>
       <!--user情報を格納する-->
       <table class="table">
         <tr>
@@ -44,22 +44,18 @@
         <% end %>
     </div>
     <div class="col-md-8 offset-md-1">
-      <h2>Users</h2>
+      <h2>Book detail</h2>
       <table class="table table-hover table-inverse">
         <thead>
-          <tr>
-            <th>image</th>
-            <th>name</th>
-            <th colspan="3"></th>
-          </tr>
         </thead>
         <tbody>
-          <% @books.each do |book| %>
+          <% @users.each do |user| %>
           <tr>
-            <td><%= book.title %></td>
-            <td><%= link_to book.introduction , book_path(book.id) %></td>
-            <td><%= link_to 'Edit'  ,edit_book_path(book.id)%></td>
-            <td><%= link_to 'Destroy' , book_path(book.id) , method: :delete , "data-confirm" => "Are you sure?" %></td>
+            <!--ここに画像が入ります-->
+            <td><%= link_to user.name , user_path(user.id) %></td>
+            <td><%=  user.introduction  %></td>
+            <td><%= link_to 'Edit'  ,edit_user_path(user.id)%></td>
+            <td><%= link_to 'Destroy' , user_path(user.id) , method: :delete , "data-confirm" => "Are you sure?" %></td>
           </tr>
           <% end %>
           <!--ここにループ文を記載-->

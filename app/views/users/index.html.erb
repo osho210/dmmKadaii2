@@ -3,7 +3,7 @@
     <div class="col-mod-3">
       <h2>User info</h2>
       <!--ここに判定のコードが入る (画像)-->
-      <%= image_tag @user.get_profile_image(100,100) %>
+      <%= image_tag @user.get_profile_image(400,100) %>
       <!--user情報を格納する-->
       <table class="table">
         <tr>
@@ -56,12 +56,14 @@
         <tbody>
           <% @users.each do |user|  %>
           <tr>
+            <td><%= image_tag user.get_profile_image(100,100) %></td>
             <td><%= user.name %></td>
             <td><%= user.introduction %></td>
             <td><%= link_to 'Show' , user_path(user.id) %></td>
           </tr>
           <% end %>
           <!--ここにループ文を記載-->
+
         </tbody>
       </table>
     </div>
