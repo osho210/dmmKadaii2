@@ -53,6 +53,11 @@
             <!--ここに画像が入ります-->
             <% @books.each do |book| %>
             <tr>
+              <td>
+                <div>
+                <%= image_tag @user.get_profile_image(400,100) %><br>
+                <%= @user.name%>
+              </td>
               <td><%= book.title %></td>
               <td><%= book.introduction %></td>
             </tr>
