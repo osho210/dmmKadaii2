@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @users = User.all.order(id: :asc)
     # idで表示する情報の絞り込み
     @books = Book.where(user_id: @user)
+    @book = Book.find(params[:id])
 
     # @books = Book.find(User.find(params[:id]))
   end
